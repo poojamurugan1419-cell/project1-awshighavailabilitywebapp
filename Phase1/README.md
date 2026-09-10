@@ -17,8 +17,23 @@ Built a highly available web application using AWS.
 - S3
 
 ## Architecture
+            INTERNET
+                     |
+                     v
+              Application LB
+                     |
+             ┌───────┴───────┐
+             |               |
+             v               v
+         EC2 #1           EC2 #2
+         Nginx             Nginx
+             |               |
+        AZ-1/Subnet 1   AZ-2/Subnet 2
+             \               /
+              \             /
+                 VPC
+              10.0.0.0/16
 
-[Architecture diagram]
 
 ## Implementation
 
